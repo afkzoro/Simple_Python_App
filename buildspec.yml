@@ -4,16 +4,18 @@ phases:
   install:
     commands:
       - echo "Installing semgrep..."
-      - python3 -m pip install semgrep
+      - python -m pip install --upgrade pip
+      - pip install semgrep
+
   pre_build:
     commands:
-      - echo "Running semgrep scan..."
-      - semgrep --
+      - echo "Running Semgrep scan..."
+      - semgrep ci
 
   build:
     commands:
-      # Your normal build commands here
+      - echo "Entering the build phases"
 
 post_build:
   commands:
-      # Any post-build actions (optional)
+    - echo "Build done"
