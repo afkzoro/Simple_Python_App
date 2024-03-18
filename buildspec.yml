@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing semgrep..."
+      - python3 -m pip install semgrep
+  pre_build:
+    commands:
+      - echo "Running semgrep scan..."
+      - semgrep --
+
+  build:
+    commands:
+      # Your normal build commands here
+
+post_build:
+  commands:
+      # Any post-build actions (optional)
